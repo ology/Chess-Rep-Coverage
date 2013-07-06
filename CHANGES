@@ -1,0 +1,29 @@
+Changes file for Games::Chess::Coverage
+
+0.0201_1 Mon July 2 2007
+    - Mothballed. Retired. Put out to pasture in lieu of the vastly
+      superior Chess::Coverage module.
+
+0.0201 Thu Aug 5 2004
+    - Fixed the Changes date for release 0.02.
+    - Added the mysteriously absent Imager directroy.
+
+0.02 Wed Aug 4 2004
+    - Made the Makefile.PL show G-C-Draw installed plugin modules.
+    - Added game slice handling with Chess::PGN::Filter and handy
+      game/move extraction methods.
+    - Added the beginnings of SVG support.
+
+0.0102 Thu May 13 2004
+    - Cleaned POD.  No functionality changes.
+
+0.0101 Sun May 9 2004
+    - Fixed the img URL in the POD.
+    - Fixed the forgotten code in eg/Pieces.pm
+    - Reran the eg/*_draw programs to generate the eg/ graphics
+
+0.01 Sun May 9 2004
+    - First respectable release.
+
+0.01_01 Sun Jan 11 02:13:18 2004
+    - Skeleton created with Module::Husbandry.
