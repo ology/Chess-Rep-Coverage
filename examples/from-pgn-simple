@@ -26,7 +26,7 @@ my $g = Chess::Rep->new;
 my $i = 0;
 for my $move (@moves) {
     $i++;
-    print "$i. $move\n";
+    print "$i. $move: ", $g->get_fen, "\n";
     $g->go_move($move);
 }
 
