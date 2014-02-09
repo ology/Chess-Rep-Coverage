@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Chess::Pgn;
+use Chess::Rep;
+
+my $file = -e $ARGV[0] ? $ARGV[0] : die "Usage: perl $0 file.pgn\n";
+
+# Consume the game moves (only).
+my $p = Chess::Pgn->new($file);
+$p->ReadGame;
+my $game = $p->game;
+$game =~ s/\n/ /g; # De-wrap.
+my @pairs = split /\s*\d+\.\s+/, $game; 
+
+my @moves = ();
+for my $pair (@pairs) {
+    next if $pair =~ /^\s*$/;
+    last if $pair =~ /{/;
+    push @moves, split /\s+/, $pair;
+}
+
+my $g = Chess::Rep->new;
+
+my $i = 0;
+for my $move (@moves) {
+    $i++;
+    print "$i. $move\n";
+    $g->go_move($move);
+}
+
