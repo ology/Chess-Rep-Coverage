@@ -12,7 +12,7 @@ use warnings;
 
 use base 'Chess::Rep';
 
-our $VERSION = '0.1003';
+our $VERSION = '0.11';
 
 =head1 SYNOPSIS
 
@@ -24,6 +24,11 @@ our $VERSION = '0.1003';
   $g->set_from_fen('8/8/8/3pr3/4P3/8/8/8 w ---- - 0 1');
   $c = $g->coverage(); # Recalculate board status
   print $g->board();
+  $piece = $g->piece_at($row, $col);
+  $boolean = $g->protected($row, $col);
+  $boolean = $g->threatened($row, $col);
+  $boolean = $g->white_can_move($row, $col);
+  $boolean = $g->black_can_move($row, $col);
 
 =head1 DESCRIPTION
 
