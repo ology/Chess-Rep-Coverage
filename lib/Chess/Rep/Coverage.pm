@@ -211,6 +211,7 @@ sub _fetch_new_moves {
     $self->to_move($color);
     # Recompute the move status.
     $self->compute_valid_moves;
+    # TODO Pawns can move diagonally to capture. That is a valid move in the abstract.
     # Collect the moves of the piece.
     return [ map { $_->{to} } grep { $_->{from} == $index } @{ $self->status->{moves} } ];
 }
