@@ -12,6 +12,8 @@ use warnings;
 
 use base 'Chess::Rep';
 
+use constant SIZE => 7;
+
 our $VERSION = '0.11';
 
 =head1 SYNOPSIS
@@ -76,8 +78,8 @@ sub coverage {
     @pieces{values %{+Chess::Rep::PIECE_TO_ID()}} = keys %{+Chess::Rep::PIECE_TO_ID()};
 
     # Look at each board position.
-    for my $row (0 .. 7) {
-        for my $col (0 .. 7) {
+    for my $row (0 .. SIZE) {
+        for my $col (0 .. SIZE) {
             my $p = $self->get_piece_at($row, $col); # decimal of index
             if ($p) {
                 my $c = Chess::Rep::piece_color($p); # 0=black, 0x80=white
@@ -175,7 +177,7 @@ sub _invert_fen {
     # Split the FEN into rows.
     my @fen = split /\//, $fen; # rows: 7..0, cols: 0..7
     # The FEN sections are the rows reversed.
-    $row = 7 - $row;
+    $row = SIZE - $row;
 
     my $position = 0;
     my $counter = 0;
