@@ -28,8 +28,6 @@ $fen = '8/8/8/3pr3/4P3/8/8/8 w ---- - 0 1'; # 3 pieces, w/b pawn mutual threat, 
 diag($fen);
 $g->set_from_fen($fen);
 $c = $g->coverage();
-ok $c->{D4}{black_can_move_here}[0] == 67, 'D4 black_can_move_here';
-ok not(@{ $c->{D4}{white_can_move_here} }), 'D4 white_can_move_here';
 ok $c->{D5}{move}[0] == 51 || $c->{D5}{move}[0] == 52, 'D5 move';
 ok $c->{D5}{threatens}[0] == 52, 'D5 threatens';
 ok $c->{D5}{is_protected_by}[0] == 68, 'D5 is_protected_by';
@@ -54,7 +52,7 @@ my $w = q{     A     B     C     D     E     F     G     H
   +-----+-----+-----+-----+-----+-----+-----+-----+
 5 |     |     |     | 1/1 | 0/0 | 0:1 | 0:1 | 0:1 |
   +-----+-----+-----+-----+-----+-----+-----+-----+
-4 |     |     |     | 0:1 | 0/2 |     |     |     |
+4 |     |     | 0:1 |     | 0/2 |     |     |     |
   +-----+-----+-----+-----+-----+-----+-----+-----+
 3 |     |     |     |     |     |     |     |     |
   +-----+-----+-----+-----+-----+-----+-----+-----+
