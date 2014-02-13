@@ -110,9 +110,13 @@ sub coverage {
                 }
                 # Attacking pawns are special-cased.
                 elsif (($p & 0x01) && $self->to_move != $c) {
-                    my $moves = [ [$row - 1, $col + 1], [$row - 1, $col - 1] ];
+                    my $moves = $c == 0
+                        ? [ [$row - 1, $col + 1], [$row - 1, $col - 1] ]
+                        : [ [$row + 1, $col + 1], [$row + 1, $col - 1] ];
                     # Add diagonal positions unless occupied.
                     for my $m (@$moves) {
+                        next if $m->[0] < 0 || $m->[0] > SIZE
+                             || $m->[1] < 0 || $m->[1] > SIZE;
                         my $x = Chess::Rep::get_index(@$m);
                         $self->_set_piece_status($cover, $f, $x, $c);
                         # Collect the moves of the piece.
