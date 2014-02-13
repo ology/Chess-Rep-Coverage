@@ -108,6 +108,17 @@ sub coverage {
                         $self->_set_piece_status($cover, $f, $x, $c);
                     }
                 }
+                # Attacking pawns are special-cased.
+                elsif (($p & 0x01) && $self->to_move != $c) {
+                    my $moves = [ [$row - 1, $col + 1], [$row - 1, $col - 1] ];
+                    # Add diagonal positions unless occupied.
+                    for my $m (@$moves) {
+                        my $x = Chess::Rep::get_index(@$m);
+                        $self->_set_piece_status($cover, $f, $x, $c);
+                        # Collect the moves of the piece.
+                        push @{ $cover->{$f}{move} }, $x;
+                    }
+                }
                 else {
                     # Invert the FEN to compute all possible moves, threats and protections.
                     my $inverted = _invert_fen($fen, $row, $col, $c);
