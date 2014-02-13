@@ -3,6 +3,7 @@ Revision history for Chess-Rep-Coverage
 {{$NEXT}}
     - Removed dependence upon Imager.
     - Special-cased attacking pawns to show diagonal movement
+    - Improved dist.ini
 
 0.1003 2012.12.10
     - Added Test::PodSpelling to dist.ini and fixed spelling errors.
