@@ -1,6 +1,9 @@
 Revision history for Chess-Rep-Coverage
 
 {{$NEXT}}
+    - 
+
+0.11  2014-02-13
     - Removed dependence upon Imager.
     - Special-cased attacking pawns to show diagonal movement
     - Improved dist.ini
