@@ -94,11 +94,8 @@ sub coverage {
                 $cover->{$f}{protects} = [];
                 $cover->{$f}{threatens} = [];
 
-                # Pawns are special-cased.
-                if ($p == 4 or $p == 132) {
-                }
                 # Kings are special-cased.
-                elsif ($p == 4 or $p == 132) {
+                if ($p & 0x04) {
                     # Collect the moves of the piece.
                     $cover->{$f}{move} = $self->_fetch_new_moves($f, $i, $c);
 
