@@ -1,34 +1,17 @@
-Chess::Rep::Coverage=~/dev/Games/Chess-Rep-Coverage CD=. {
+Chess::Rep::Coverage=~/sandbox/github/ology/Chess-Rep-Coverage CD=. {
  lib=lib/Chess/Rep {
   Coverage.pm
-  Coverage/Imager.pm
  }
  t=t {
   00-load.t
   01-methods.t
-  03-imager.t
  }
  eg=examples {
   from-pgn
   immortal.pgn
   move-probability
+  coverage
  }
  Changes
  dist.ini
-
- CRC=~/trunk/dev/Chess-Rep-Coverage {
-  eg=eg {
-   tester
-  }
-  lib=lib/Chess/Rep {
-   Coverage.pm
-  }
-  t=t {
-   Chess-Rep-Coverage.t
-  }
-  CHANGES
- }
- /opt/local/lib/perl5/site_perl/5.12.3/Chess/Rep.pm
- ~/dev/Games/Games-Chess-Coverage-0.0102/lib/Games/Chess/Coverage/Draw.pm
- ~/dev/Games/Games-Chess-Coverage-0.0102/lib/Games/Chess/Coverage/Imager/Board.pm
 }
