@@ -10,7 +10,7 @@ Chess::Rep::Coverage - Expose chess ply potential energy
 use strict;
 use warnings;
 
-use base 'Chess::Rep';
+use parent 'Chess::Rep';
 
 use constant SIZE => 7;
 
@@ -94,8 +94,11 @@ sub coverage {
                 $cover->{$f}{protects} = [];
                 $cover->{$f}{threatens} = [];
 
-                # Kings are special-cased.
+                # Pawns are special-cased.
                 if ($p == 4 or $p == 132) {
+                }
+                # Kings are special-cased.
+                elsif ($p == 4 or $p == 132) {
                     # Collect the moves of the piece.
                     $cover->{$f}{move} = $self->_fetch_new_moves($f, $i, $c);
 
