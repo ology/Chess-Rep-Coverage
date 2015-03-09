@@ -61,13 +61,13 @@ position, showing
 sub coverage {
     my $self = shift;
 
-    # What is the state of our board?
+    # Get the state of the board
     my $fen = $self->get_fen();
 
-    # Return a bucket of piece coverages.
+    # Bucket of piece coverages to return
     my $cover = {};
 
-    # Get the set of pieces and ids.
+    # Set the numerical id => piece name lookup table
     my %pieces;
     @pieces{values %{+Chess::Rep::PIECE_TO_ID()}} = keys %{+Chess::Rep::PIECE_TO_ID()};
 
