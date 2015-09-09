@@ -18,13 +18,8 @@ our $VERSION = '0.1101';
   print $g->board();
 
   $g->set_from_fen('8/8/8/3pr3/4P3/8/8/8 w ---- - 0 1');
-  $c = $g->coverage(); # Recalculate board status
+  $g->coverage(); # Recalculate board status
   print $g->board();
-  $piece = $g->piece_at($row, $col);
-  $boolean = $g->protected($row, $col);
-  $boolean = $g->threatened($row, $col);
-  $boolean = $g->white_can_move($row, $col);
-  $boolean = $g->black_can_move($row, $col);
 
 =head1 DESCRIPTION
 
@@ -40,7 +35,7 @@ Return a new C<Chess::Coverage> object.
 
 =head2 coverage()
 
-  $c = $gcoverage();
+  $c = $g->coverage();
 
 Set the C<cover> attribute and return a data structure, keyed on board
 position, showing
@@ -253,7 +248,7 @@ sub _cover {
 
 =head2 board()
 
-  print $self->board();
+  print $g->board();
 
 Return an ASCII board layout with threats, protections and move
 statuses.
