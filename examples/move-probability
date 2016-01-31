@@ -59,29 +59,23 @@ sub usage {
     return <<USAGE;
 
 Compute probabilites of chess moves in a protective, threatening environment.
-Copyright 2012 Gene Boggs <gene\@cpan.org>
 
 Usage: perl $0 [0-9...] [0-9...] [t1,t2...] [0-9...] [p1,p2...]
 
-Ordered arguments:
+Arguments:
  'moves' is the number of moves of a piece.
     For example, a unobstructed knight can make eight moves.
- 'threat' is the value or score of a single threat.
+ 'threat' is the value or score of a single threat, like 0.2.
  'threatened moves' is a CSV list of threatened move numbers.
     This means that you can be captured by your enemy if you move there.
- 'protect' is the value or score of a single protection.
+ 'protect' is the value or score of a single protection, like 0.1.
  'protected moves' is a CSV list of protected move numbers.
     This means that you will be protected by an ally if you move there.
 
 Examples:
- perl move-probability 8              # An unobstructed, unprotected knight
- perl move-probability 8 1            # Same
- perl move-probability 8 1 0          # Ditto
- perl move-probability 8 1 0 1        # "
- perl move-probability 8 1 0 1 0      # Right. Gotchya. 10-4 Good buddy.
- perl move-probability 8 1 1,8        # Threaten the 1st & 8th moves.
- perl move-probability 8 0 0 1 1,2    # Protect the 1st & 2nd moves.
- perl move-probability 8 1 1,8 1 1,2  # Protect & threaten
- perl move-probability 8 .1 1,8       # Threaten with a penalty of 0.1.
+ perl move-probability 8                # An unobstructed, unprotected knight
+ perl move-probability 8 .2 1,8         # Threaten the 1st & 8th moves
+ perl move-probability 8 0 0 .1 1,2     # Protect the 1st & 2nd moves
+ perl move-probability 8 .2 1,8 .1 1,2  # Threaten & protect
 USAGE
 }
