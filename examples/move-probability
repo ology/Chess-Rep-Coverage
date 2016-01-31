@@ -73,7 +73,7 @@ Arguments:
     This means that you will be protected by an ally if you move there.
 
 Examples:
- perl move-probability 8                # An unobstructed, unprotected knight
+ perl move-probability 8                # An unthreatened, unprotected knight
  perl move-probability 8 .2 1,8         # Threaten the 1st & 8th moves
  perl move-probability 8 0 0 .1 1,2     # Protect the 1st & 2nd moves
  perl move-probability 8 .2 1,8 .1 1,2  # Threaten & protect
