@@ -82,8 +82,6 @@ Examples:
  perl move-probability 8 1 1,8        # Threaten the 1st & 8th moves.
  perl move-probability 8 0 0 1 1,2    # Protect the 1st & 2nd moves.
  perl move-probability 8 1 1,8 1 1,2  # Protect & threaten
- perl move-probability 8 10 1,8       # Threaten with a penalty of 10.
-
-* This logic does not treat "not making a move" as a value, at the moment...
+ perl move-probability 8 .1 1,8       # Threaten with a penalty of 0.1.
 USAGE
 }
