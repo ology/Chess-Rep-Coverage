@@ -504,10 +504,10 @@ __END__
 
 =head1 SEE ALSO
 
-* The code in this distribution F<examples/> and F<t/> directories.
+The code in this distribution F<examples/> and F<t/> directories.
 
-* L<Chess::Rep>
+L<Chess::Rep>
 
-* L<http://en.wikipedia.org/wiki/Forsyth-Edwards_Notation>
+L<http://en.wikipedia.org/wiki/Forsyth-Edwards_Notation>
 
 =cut
