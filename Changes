@@ -1,6 +1,8 @@
 Revision history for Chess-Rep-Coverage
 
 {{$NEXT}}
+
+0.1102 2019-05-04
     - Fixed examples/move-probability.
     - Update documentation slightly.
     - Clean up distribution.
