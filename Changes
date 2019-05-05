@@ -3,6 +3,7 @@ Revision history for Chess-Rep-Coverage
 {{$NEXT}}
     - Fixed examples/move-probability.
     - Update documentation slightly.
+    - Clean up distribution.
 
 0.1101 2014-08-30
     - Fixed POD
