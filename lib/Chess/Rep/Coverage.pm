@@ -471,7 +471,6 @@ sub _usage {
     return <<USAGE;
 
 Compute probabilites of chess moves in a protective, threatening environment.
-Copyright 2012 Gene Boggs <gene\@cpan.org>
 
 Usage: perl $0 [0-9...] [0-9...] [t1,t2...] [0-9...] [p1,p2...]
 
