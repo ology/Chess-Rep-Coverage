@@ -1,4 +1,5 @@
 package Chess::Rep::Coverage;
+
 # ABSTRACT: Expose chess ply potential energy
 
 use strict;
@@ -8,7 +9,7 @@ use parent 'Chess::Rep';
 
 use constant SIZE => 7;
 
-our $VERSION = '0.1101';
+our $VERSION = '0.1102';
 
 =head1 SYNOPSIS
 
@@ -23,9 +24,9 @@ our $VERSION = '0.1101';
 
 =head1 DESCRIPTION
 
-This module exposes the "potential energy" of a chess ply by returning
-a hash reference of the board positions, pieces and their "attack or
-protection status."
+This module exposes the "potential energy" of a chess ply by returning a hash
+reference of the board positions, pieces, possible movements, and their attack
+or protection status.
 
 =head1 METHODS
 
@@ -37,8 +38,8 @@ Return a new C<Chess::Coverage> object.
 
   $c = $g->coverage();
 
-Set the C<cover> attribute and return a data structure, keyed on board
-position, showing
+Set the B<cover> attribute and return a data structure, keyed on board position,
+showing:
 
   occupant            => Human readable piece name
   color               => Color number of the occupant
@@ -250,14 +251,12 @@ sub _cover {
 
   print $g->board();
 
-Return an ASCII board layout with threats, protections and move
-statuses.
+Return an ASCII board layout with threats, protections and move statuses.
 
-Protection and threat is indicated by C<p/t>.  White and black
-movement is indicated by C<w:b>.
+Protection and threat is indicated by C<p/t>.  White and black movement is
+indicated by C<w:b>.
 
-For example, the FEN C<8/8/8/3pr3/4P3/8/8/8 w ---- - 0 1> is rendered
-as:
+For example, the FEN C<8/8/8/3pr3/4P3/8/8/8 w ---- - 0 1> is rendered as:
 
        A     B     C     D     E     F     G     H
     +-----+-----+-----+-----+-----+-----+-----+-----+
@@ -278,11 +277,10 @@ as:
   8 |     |     |     |     | 0:1 |     |     |     |
     +-----+-----+-----+-----+-----+-----+-----+-----+
 
-This means that, 1) the black pawn at D5 can move to D4 and can
-capture the white pawn at E4; 2) the white pawn at E4 can capture the
-pawn at D5 but cannot move; 3) the black rook at E5 protects the black
-pawn at D5, can capture the white pawn at E4 and can move to F5
-through H5 or E6 through E8.
+This means that, 1) the black pawn at D5 can move to D4 and can capture the
+white pawn at E4; 2) the white pawn at E4 can capture the pawn at D5 but cannot
+move; 3) the black rook at E5 protects the black pawn at D5, can capture the
+white pawn at E4 and can move to F5 through H5 or E6 through E8.
 
 =cut
 
