@@ -6,8 +6,6 @@ use Test::More;
 use_ok 'Chess::Rep::Coverage';
 
 my $g = new_ok 'Chess::Rep::Coverage';
-print $@ if $@;
-isa_ok $g, 'Chess::Rep::Coverage';
 
 my $fen = Chess::Rep::FEN_STANDARD(); # Default starting position
 diag($fen);
