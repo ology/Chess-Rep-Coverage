@@ -1,7 +1,7 @@
 Revision history for Chess-Rep-Coverage
 
 {{$NEXT}}
-    - Remove empty parens on method call syntax.
+    - Remove annoying empty parens on method call syntax.
 
 0.1102 2019-05-04
     - Fixed examples/move-probability.
