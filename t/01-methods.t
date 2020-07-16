@@ -3,13 +3,13 @@ use strict;
 use warnings;
 use Test::More;
 
-BEGIN { use_ok('Chess::Rep::Coverage') }
+use_ok 'Chess::Rep::Coverage';
 
-my $g = eval { Chess::Rep::Coverage->new };
+my $g = new_ok 'Chess::Rep::Coverage';
 print $@ if $@;
 isa_ok $g, 'Chess::Rep::Coverage';
 
-my $fen = Chess::Rep::FEN_STANDARD; # Default starting position
+my $fen = Chess::Rep::FEN_STANDARD(); # Default starting position
 diag($fen);
 my $c = $g->coverage;
 isa_ok $c, 'HASH';
