@@ -9,7 +9,7 @@ use parent 'Chess::Rep';
 
 use constant SIZE => 7;
 
-our $VERSION = '0.1102';
+our $VERSION = '0.1103';
 
 =head1 SYNOPSIS
 
